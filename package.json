@@ -1,0 +1,23 @@
+{
+  "name": "testing-github-mergequeue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Richard-s-New-Org/testing-github-mergequeue.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Richard-s-New-Org/testing-github-mergequeue/issues"
+  },
+  "homepage": "https://github.com/Richard-s-New-Org/testing-github-mergequeue#readme",
+  "dependencies": {
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
+  }
+}
