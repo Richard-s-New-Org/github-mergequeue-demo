@@ -11,7 +11,8 @@ jobs:
           node-version: '20'
       - node/install-packages
       - run:
-          command: npm run test -- --ci --reporters=default --reporters=jest-junit
+          # command: npm run test -- --ci --reporters=default --reporters=jest-junit
+          command: CI=true npm run test:all --coverage.reporter=clover --coverage.reporter=text-summary
           environment:
             JEST_JUNIT_OUTPUT_FILE: 'reports/junit/js-test-results.xml'
       - store_test_results:

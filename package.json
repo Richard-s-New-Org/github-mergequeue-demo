@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./test.sh"
+    "test": "vitest",
+    "test:all": "vitest --run"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "dependencies": {
     "prettier": "^3.2.4",
     "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "vitest": "^1.5.1"
   }
 }
