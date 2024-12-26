@@ -1,3 +1,3 @@
 # github-mergequeue-demo
 
-Something happening here.
+Something **happening** _here_.
