@@ -1,0 +1,26 @@
+name: Publish pre-release PR
+run-name: ${{ github.actor }} is checking for label to publish a pre-release version
+on:
+  pull_request:
+    types:
+      - labeled
+      - synchronize
+
+jobs:
+  publish-prerelease:
+    # if: contains(github.event.pull_request.labels.*.name, 'publish') || github.event.label.name == 'publish'
+    if: contains(github.event.pull_request.labels.*.name, 'publish')
+    name: 'Publish pre-release'
+    runs-on: ubuntu-latest
+    environment: 'GitHub Actions'
+    env:
+      NPM_TOKEN: none
+    steps:
+      - uses: actions/checkout@v4
+      - run: git rev-parse --verify 'HEAD^{commit}'
+      - name: Labels
+        run: echo ${{ github.event.label.name }} - '${{ toJSON(github.event.pull_request.labels.*.name) }}'
+      - name: Run ID, Run number, Run attempt
+        run: echo ${{ github.run_id }} - ${{ github.run_number }}.${{ github.run_attempt }}
+      - name: Git version
+        run: echo 'pr${{ github.event.pull_request.number }}'
